@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:portfolio_web/data.dart';
 
 class AboutMe extends StatelessWidget {
-  const AboutMe({super.key});
+  final String bodyText;
+
+  const AboutMe({super.key, required this.bodyText});
 
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(
-          maxWidth: 700, maxHeight: 300, minHeight: 100, minWidth: 100),
+      constraints: const BoxConstraints(
+          maxWidth: 700, maxHeight: 300, minHeight: 100, minWidth: 300),
       child: Card(
-        child: Text(
-            "Current undergraduate computer science student at Hacettepe University with a initiative taker mind and have a strong foundation in math,problem solving and logic. Looking to leverage experience on building front‑end applications."),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(bodyText),
+        ),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:portfolio_web/about_me.dart';
+import 'data.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,19 +12,20 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          TextButton(onPressed: () {}, child: Text("Home Page")),
-          TextButton(onPressed: () {}, child: Text("Projects"))
+          TextButton(onPressed: () {}, child: const Text("Home Page")),
+          TextButton(onPressed: () {}, child: const Text("Projects"))
         ],
-        title: Text('Hasan Erdil Aşkar\'s Portfolio '),
+        title: const Text('Hasan Erdil Aşkar\'s Portfolio '),
       ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               CircleAvatar(maxRadius: 50, child: Icon(Icons.person)),
               Text("Hasan Erdil Aşkar"),
-              AboutMe()
+              AboutMe(bodyText: intro),
+              AboutMe(bodyText: dummy)
             ],
           ),
         ),
