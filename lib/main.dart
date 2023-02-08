@@ -14,10 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'hasanerdil portfolio',
-        theme: ThemeData(
-          useMaterial3: true,
-          primarySwatch: Colors.indigo,
-        ),
+        theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.indigo),
         home: const HomePage());
   }
 }

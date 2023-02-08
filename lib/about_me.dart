@@ -10,9 +10,8 @@ class AboutMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(
-          maxWidth: 700, maxHeight: 300, minHeight: 100, minWidth: 300),
+    return Container(
+      width: MediaQuery.of(context).size.width,
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
