@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_web/contact.dart';
 import 'package:portfolio_web/project.dart';
 
 import 'about_me.dart';
@@ -64,7 +66,31 @@ class DesktopLayout extends StatelessWidget {
                   ),
                 ],
               ),
-              Text("dsdd")
+              IntrinsicWidth(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ContactTile(
+                      title: contacts["E-mail"]!,
+                      contactIcon: Icons.mail,
+                      url: "mailto:${contacts["E-mail"]!}",
+                    ),
+                    ContactTile(
+                      title: contacts["LinkedIn"]!,
+                      contactIcon: FontAwesomeIcons.linkedin,
+                      url:
+                          "https://www.linkedin.com/in/${contacts["LinkedIn"]!}/",
+                    ),
+                    ContactTile(
+                      title: contacts["Github"]!,
+                      contactIcon: FontAwesomeIcons.github,
+                      url: "https://github.com/${contacts["Github"]!}",
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),

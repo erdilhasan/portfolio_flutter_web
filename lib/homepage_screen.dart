@@ -27,7 +27,6 @@ class HomePage extends StatelessWidget {
           } else {
             return DesktopLayout();
           }
-          ;
         },
       ),
     );
