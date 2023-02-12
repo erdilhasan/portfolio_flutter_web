@@ -13,60 +13,60 @@ class DesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.all(10),
-      child: Center(
-        child: SelectionArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircleAvatar(maxRadius: 50, child: Icon(Icons.person)),
-              Text(
-                "Hasan Erdil Aşkar",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
-                ),
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        AboutMe(bodyText: intro),
-                        AboutMe(bodyText: dummy),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return SelectionArea(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+                maxRadius: 50, backgroundImage: AssetImage("profile.jpg")),
+            Text(
+              "Hasan Erdil Aşkar",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        "Projects",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 2.3,
-                        child: ListView.builder(
-                          physics: NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemCount: projects.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            String key = projects.keys.elementAt(index);
-                            return Project(title: key, subText: projects[key]!);
-                          },
-                        ),
-                      ),
+                      AboutMe(bodyText: intro),
+                      AboutMe(bodyText: dummy),
                     ],
                   ),
-                ],
-              ),
-              IntrinsicWidth(
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Projects",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2.3,
+                      child: ListView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: projects.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          String key = projects.keys.elementAt(index);
+                          return Project(title: key, subText: projects[key]!);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: IntrinsicWidth(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,9 +90,9 @@ class DesktopLayout extends StatelessWidget {
                     )
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -13,6 +13,7 @@ class AboutMe extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       child: Card(
+        elevation: 5,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(bodyText),

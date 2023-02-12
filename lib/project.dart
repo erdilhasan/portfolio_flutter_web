@@ -12,11 +12,13 @@ class Project extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 5,
       color: Colors.lightBlue.shade100,
       child: ListTile(
         title: Text(title),
         subtitle: Text(subText),
         leading: FaIcon(FontAwesomeIcons.circleDot, color: Colors.black),
+        trailing: FaIcon(FontAwesomeIcons.angleRight, color: Colors.black),
         onTap: () {},
       ),
     );

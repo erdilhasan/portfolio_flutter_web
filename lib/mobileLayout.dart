@@ -20,10 +20,21 @@ class MobileLayout extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(maxRadius: 50, child: Icon(Icons.person)),
-              Text("Hasan Erdil Aşkar"),
+              Text(
+                "Hasan Erdil Aşkar",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              ),
+              SizedBox(height: 5),
               AboutMe(bodyText: intro),
+              SizedBox(height: 5),
               AboutMe(bodyText: dummy),
+              SizedBox(height: 10),
+              Text(
+                "Projects",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
               ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: projects.length,
                 itemBuilder: (BuildContext context, int index) {
@@ -31,24 +42,28 @@ class MobileLayout extends StatelessWidget {
                   return Project(title: key, subText: projects[key]!);
                 },
               ),
+              SizedBox(height: 10),
               IntrinsicWidth(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     ContactTile(
-                      title: "hasanerdil1260@gmail.com",
+                      title: contacts["E-mail"]!,
                       contactIcon: Icons.mail,
-                      url: "mailto:hasanerdil1260@gmail.com",
+                      url: "mailto:${contacts["E-mail"]!}",
                     ),
                     ContactTile(
-                      title: "hasanaskar",
+                      title: contacts["LinkedIn"]!,
                       contactIcon: FontAwesomeIcons.linkedin,
-                      url: "https://www.linkedin.com/in/hasanaskar/",
+                      url:
+                          "https://www.linkedin.com/in/${contacts["LinkedIn"]!}/",
                     ),
                     ContactTile(
-                      title: "erdilhasan",
+                      title: contacts["Github"]!,
                       contactIcon: FontAwesomeIcons.github,
-                      url: "https://github.com/erdilhasan",
+                      url: "https://github.com/${contacts["Github"]!}",
                     )
                   ],
                 ),
