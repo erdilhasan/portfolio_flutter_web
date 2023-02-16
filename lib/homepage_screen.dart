@@ -16,7 +16,11 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         actions: [
           TextButton(onPressed: () {}, child: const Text("Home Page")),
-          TextButton(onPressed: () {}, child: const Text("Projects"))
+          TextButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed("projects");
+              },
+              child: const Text("Projects"))
         ],
         title: const Text('Hasan Erdil Aşkar\'s Portfolio '),
       ),

@@ -17,6 +17,31 @@ Map<String, String> projects = {
   "Gezdir": "Tourism App to find local guides to help explore",
 };
 
+Map<String, Map<String, dynamic>> detailedProjects = {
+  "Geyik": {
+    "desc": '''
+• Developed collaboratively in group of two people under ACM Hacettepe student club.
+• Features food list, campus map, events and news,GPA calculator.
+• Firebase used for the backend part; database and authentication.
+• Average of 400 active users daily.
+''',
+    "images": ["(1).png", "(2).png", "(3).png", "(4).png", "(5).png"]
+  },
+  "Mobile 2D Game": {
+    "desc": '''
+• Developed using Unity Game Engine and written in C#.
+• Used assets with public domain licence
+'''
+  },
+  "Gezdir": {
+    "desc": '''
+• In pre evaluation report, the team became 6th in rankings.
+• Project is a mobile app in tourism sector used for finding touris guides.
+• Currently being developed using Flutter Framework and Firebase for backend parts
+''',
+  }
+};
+
 Map<String, String> contacts = {
   "E-mail": "hasanerdil1260@gmail.com",
   "LinkedIn": "hasanaskar",

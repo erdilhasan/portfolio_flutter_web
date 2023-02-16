@@ -19,7 +19,9 @@ class Project extends StatelessWidget {
         subtitle: Text(subText),
         leading: FaIcon(FontAwesomeIcons.circleDot, color: Colors.black),
         trailing: FaIcon(FontAwesomeIcons.angleRight, color: Colors.black),
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).pushReplacementNamed("projects");
+        },
       ),
     );
   }

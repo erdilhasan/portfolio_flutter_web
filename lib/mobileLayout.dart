@@ -19,7 +19,8 @@ class MobileLayout extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircleAvatar(maxRadius: 50, child: Icon(Icons.person)),
+              CircleAvatar(
+                  maxRadius: 50, backgroundImage: AssetImage("profile.jpg")),
               Text(
                 "Hasan Erdil Aşkar",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
@@ -31,7 +32,10 @@ class MobileLayout extends StatelessWidget {
               SizedBox(height: 10),
               Text(
                 "Projects",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
               ),
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
