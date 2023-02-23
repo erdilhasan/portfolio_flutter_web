@@ -1,8 +1,10 @@
 import 'dart:html';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailedProject extends StatelessWidget {
   DetailedProject(
@@ -11,11 +13,12 @@ class DetailedProject extends StatelessWidget {
   final String title;
   final Map<String, dynamic> projectContents;
   String desc = "";
-
+  final _scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     desc = projectContents["desc"]!;
     List? images = projectContents["images"];
+    List? links = projectContents["links"];
     print(images);
     return Card(
       child: Column(
@@ -24,31 +27,76 @@ class DetailedProject extends StatelessWidget {
         children: [
           Text(title),
           Text(desc),
+          links != null
+              ? Column(
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        FilledButton(
+                            onPressed: () async {
+                              if (!await launchUrl(Uri.parse(links[0]))) {
+                                throw Exception('Could not launch ');
+                              }
+                            },
+                            child: Text("Play Store Link")),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        FilledButton(
+                            onPressed: () async {
+                              if (!await launchUrl(Uri.parse(links[1]))) {
+                                throw Exception('Could not launch ');
+                              }
+                            },
+                            child: Text("App Store Link")),
+                      ],
+                    ),
+                    SizedBox(height: 10)
+                  ],
+                )
+              : Container(),
           images != null
               ? SizedBox(
                   height: 500,
                   width: double.infinity,
                   child: Center(
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemCount: images.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Center(
-                          child: SizedBox(
-                              height: 500,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.asset(
-                                    "assets/geyik_ss/${images[index]}"),
-                              )),
-                        );
-                      },
-                      separatorBuilder: (BuildContext context, int index) {
-                        return SizedBox(
-                          width: 10,
-                        );
-                      },
+                    child: ScrollConfiguration(
+                      behavior: ScrollConfiguration.of(context).copyWith(
+                        dragDevices: {
+                          PointerDeviceKind.touch,
+                          PointerDeviceKind.mouse,
+                        },
+                      ),
+                      child: RawScrollbar(
+                        thumbColor: Colors.lightBlue.shade600,
+                        radius: Radius.circular(20),
+                        thickness: 5,
+                        controller: _scrollController,
+                        thumbVisibility: true,
+                        child: ListView.separated(
+                          controller: _scrollController,
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          itemCount: images.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Center(
+                              child: SizedBox(
+                                  height: 500,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.asset(
+                                        "assets/geyik_ss/${images[index]}"),
+                                  )),
+                            );
+                          },
+                          separatorBuilder: (BuildContext context, int index) {
+                            return SizedBox(
+                              width: 10,
+                            );
+                          },
+                        ),
+                      ),
                     ),
                   ),
                 )

@@ -19,7 +19,7 @@ class ContactTile extends StatelessWidget {
     return ListTile(
       visualDensity: VisualDensity(horizontal: 0, vertical: -4),
       dense: true,
-      leading: FaIcon(contactIcon, color: Colors.black),
+      leading: FaIcon(contactIcon, color: Colors.white),
       title: Text(title),
       onTap: () async {
         if (!await launchUrl(Uri.parse(url))) {

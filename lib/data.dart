@@ -25,7 +25,11 @@ Map<String, Map<String, dynamic>> detailedProjects = {
 • Firebase used for the backend part; database and authentication.
 • Average of 400 active users daily.
 ''',
-    "images": ["(1).png", "(2).png", "(3).png", "(4).png", "(5).png"]
+    "images": ["(1).png", "(2).png", "(3).png", "(4).png", "(5).png"],
+    "links": [
+      "https://play.google.com/store/apps/details?id=com.acm.geyik_app",
+      "https://apps.apple.com/tr/app/geyik-for-students/id6444013289"
+    ]
   },
   "Mobile 2D Game": {
     "desc": '''

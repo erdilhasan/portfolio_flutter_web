@@ -13,8 +13,9 @@ class Project extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 5,
-      color: Colors.lightBlue.shade100,
+      color: Colors.lightBlue.shade900,
       child: ListTile(
+        textColor: Colors.white,
         title: Text(title),
         subtitle: Text(subText),
         leading: FaIcon(FontAwesomeIcons.circleDot, color: Colors.black),
