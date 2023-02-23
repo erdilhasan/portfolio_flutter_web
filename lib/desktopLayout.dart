@@ -20,7 +20,7 @@ class DesktopLayout extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircleAvatar(
-              maxRadius: 50, backgroundImage: AssetImage("profile.jpg")),
+              maxRadius: 50, backgroundImage: AssetImage("assets/profile.jpg")),
           Text(
             "Hasan Erdil Aşkar",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
