@@ -26,18 +26,21 @@ Map<String, Map<String, dynamic>> detailedProjects = {
 • Average of 400 active users daily.
 ''',
     "images": ["(1).png", "(2).png", "(3).png", "(4).png", "(5).png"],
+    "logo": "logo.png",
     "links": [
       "https://play.google.com/store/apps/details?id=com.acm.geyik_app",
       "https://apps.apple.com/tr/app/geyik-for-students/id6444013289"
     ]
   },
   "Mobile 2D Game": {
+    "logo": "logo.png",
     "desc": '''
 • Developed using Unity Game Engine and written in C#.
 • Used assets with public domain licence
-'''
+''',
+    "images": ["(2).png"],
   },
-  "Gezdir": {
+  "Gezdir (W.I.P)": {
     "desc": '''
 • In pre evaluation report, the team became 6th in rankings.
 • Project is a mobile app in tourism sector used for finding touris guides.
