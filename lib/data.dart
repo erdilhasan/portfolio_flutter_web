@@ -15,6 +15,7 @@ Map<String, String> projects = {
   "Geyik": "A Social App For Use in University Campus",
   "Mobile 2D Game": "2D Mobile Platformer Game",
   "Gezdir": "Tourism App to find local guides to help explore",
+  "Portfolio Website": "A responsive portfolio website developed using Flutter",
 };
 
 Map<String, Map<String, dynamic>> detailedProjects = {
@@ -46,11 +47,17 @@ Map<String, Map<String, dynamic>> detailedProjects = {
 • Project is a mobile app in tourism sector used for finding touris guides.
 • Currently being developed using Flutter Framework and Firebase for backend parts
 ''',
+  },
+  "Portfolio Website (Current Site)": {
+    "desc": '''
+• Developed using Flutter framework.
+• Responsive layout.
+''',
   }
 };
 
 Map<String, String> contacts = {
-  "E-mail": "hasanerdil1260@gmail.com",
+  "E-mail": "hasanerdilaskar@gmail.com",
   "LinkedIn": "hasanaskar",
   "Github": "erdilhasan",
 };
